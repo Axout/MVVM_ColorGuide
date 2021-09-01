@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="item"
+                  type="ru.axout.mvvm_colorguide.viewmodel.FlowersViewModel"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/flower_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/flower_img"
+                    android:layout_width="150dp"
+                    android:layout_height="110dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/img_content_desc"
+                    app:srcCompat="@drawable/ic_flower"
+                    tools:imageUrl="@{item.flowerImg}"/>
+
+            <TextView
+                    android:id="@+id/flower_rus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/flower_img"
+                    android:layout_toEndOf="@+id/flower_img"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:text="@{item.flower_rus}"
+                    tools:text="@string/plant_rus"/>
+
+            <TextView
+                    android:id="@+id/flower_lat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/flower_rus"
+                    android:layout_below="@+id/flower_rus"
+                    android:layout_marginTop="20dp"
+                    android:text="@{item.flower_lat}"
+                    android:textColor="@color/gray"
+                    android:textSize="18sp"
+                    android:textStyle="italic"
+                    tools:text="@string/plant_lat"/>
+
+            <TextView
+                    android:id="@+id/flower_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/flower_img"
+                    android:layout_below="@+id/flower_img"
+                    android:layout_margin="15dp"
+                    android:text="@{item.flower_desc}"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="@string/plant_desc"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
