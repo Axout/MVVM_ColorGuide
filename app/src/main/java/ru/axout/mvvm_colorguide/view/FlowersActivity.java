@@ -20,6 +20,5 @@ public class FlowersActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_flowers);
         // теперь можно обращаться к макету через объект binding
         binding.flowersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
     }
 }
