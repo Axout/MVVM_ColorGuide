@@ -1,4 +1,4 @@
-# Color Guide MVP
+# Color Guide MVVM
 При загрузке приложения "Справочник цветов" пользователь
 получает с сервера список цветов.
 
@@ -11,4 +11,4 @@
 MVVM, Data Binding, Retrofit, GSON, Picasso.
 
 Демонстрация работы приложения:
-https://youtu.be/yPREvheBHvE
+https://youtu.be/xm-ZLRdzlvM
