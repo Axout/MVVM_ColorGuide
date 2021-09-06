@@ -1,22 +1,20 @@
 package ru.axout.mvvm_colorguide.network;
 
-
-import android.content.Context;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Call {
 
-    private retrofit2.Call<FlowerResponse> call;
-    private Delegate delegate;
+    private final Delegate delegate;
 
-    public Call(Context context, Delegate delegate) {
+    public Call(Delegate delegate) {
         this.delegate = delegate;
     }
 
     public void execute() {
         ICall callInterface = Api.getClient().create(ICall.class);
-        call = callInterface.getAllFlowers();
+        retrofit2.Call<FlowerResponse> call = callInterface.getAllFlowers();
+        //noinspection NullableProblems
         call.enqueue(new Callback<FlowerResponse>() {
             @Override
             public void onResponse(retrofit2.Call<FlowerResponse> call, Response<FlowerResponse> response) {

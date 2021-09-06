@@ -13,7 +13,6 @@ import ru.axout.mvvm_colorguide.network.FlowerResponse;
 public class FlowersActivity extends AppCompatActivity {
 
     private ActivityFlowersBinding binding;
-    private Call call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class FlowersActivity extends AppCompatActivity {
         // теперь можно обращаться к макету через объект binding
         binding.flowersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        call = new Call(this, new Call.Delegate() {
+        Call call = new Call(new Call.Delegate() {
             @Override
             public void onSuccess(FlowerResponse flowerResponse) {
                 binding.flowersRecyclerView.setAdapter(new FlowersAdapter(flowerResponse.listFlowers));
