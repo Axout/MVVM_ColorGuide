@@ -14,7 +14,7 @@ import java.util.List;
 
 public class FlowersAdapter extends RecyclerView.Adapter<FlowersAdapter.FlowersViewHolder> {
 
-    private List<Flowers> flowers;
+    private final List<Flowers> flowers;
 
     public FlowersAdapter(List<Flowers> flowers) {
         this.flowers = flowers;
@@ -39,7 +39,7 @@ public class FlowersAdapter extends RecyclerView.Adapter<FlowersAdapter.FlowersV
         return flowers.size();
     }
 
-    public class FlowersViewHolder extends RecyclerView.ViewHolder {
+    public static class FlowersViewHolder extends RecyclerView.ViewHolder {
 
         ItemFlowersBinding binding;
 

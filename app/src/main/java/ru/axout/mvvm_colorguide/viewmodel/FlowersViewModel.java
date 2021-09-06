@@ -7,9 +7,9 @@ import com.squareup.picasso.Picasso;
 import ru.axout.mvvm_colorguide.R;
 import ru.axout.mvvm_colorguide.model.Flowers;
 
-public class FlowersViewModel extends BaseObservable {
+public class FlowersViewModel extends BaseObservable { // наследование от BaseObservable позволяет прослушивать потоки данных
 
-    private Flowers flowers;
+    private final Flowers flowers;
     private String flowerImg;
     private String flower_rus;
     private String flower_lat;
